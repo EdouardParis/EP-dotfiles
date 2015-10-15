@@ -24,6 +24,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 filetype plugin indent on
 
+set t_Co=16
 " colorecting colorscheme
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
@@ -41,6 +42,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Left insert mode
+inoremap jj <ESC>
 
 filetype off          " required!
 
