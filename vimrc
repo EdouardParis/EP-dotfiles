@@ -48,37 +48,38 @@ inoremap jj <ESC>
 
 filetype off          " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 "let Vundle manage Vundle
 "required!
-Bundle 'gmarik/vundle'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'xenoterracide/html.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/syntastic'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'rodjek/vim-puppet'
-Bundle 'vim-scripts/tComment'
+
+Plugin 'gmarik/vundle'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'xenoterracide/html.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/syntastic'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'vim-scripts/tComment'
 Plugin 'mustache/vim-mustache-handlebars'
-Bundle "pangloss/vim-javascript"
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'bling/vim-airline'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
 
 "vim ailine config"
 let g:airline_powerline_fonts = 1
