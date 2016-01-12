@@ -80,6 +80,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
+Plugin 'Raimondi/delimitMate'
 
 "vim ailine config"
 let g:airline_powerline_fonts = 1
