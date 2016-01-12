@@ -24,7 +24,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
-export DOCKER_HOST=tcp://localhost:4243
+# export DOCKER_HOST=tcp://localhost:4243
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
