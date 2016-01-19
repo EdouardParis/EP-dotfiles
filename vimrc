@@ -62,7 +62,6 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'xenoterracide/html.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'altercation/vim-colors-solarized'
@@ -81,6 +80,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
