@@ -128,4 +128,13 @@ let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "proprie
 let g:used_javascript_libs = 'jquery,underscore,angularjs'
 let g:syntastic_javascript_checkers = ['jshint']
 
+" go syntax-highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
 filetype plugin indent on     " required!
+syntax on
