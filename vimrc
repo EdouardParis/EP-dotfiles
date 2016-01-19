@@ -82,6 +82,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 
+call vundle#end()
+
 "vim ailine config"
 let g:airline_powerline_fonts = 1
 
