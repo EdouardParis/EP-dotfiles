@@ -81,6 +81,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fatih/vim-go'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'beyondwords/vim-twig'
 
 call vundle#end()
 
