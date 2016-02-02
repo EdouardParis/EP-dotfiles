@@ -37,7 +37,7 @@ function! ToggleSpellLang()
     :set spelllang=en
   endif
 endfunction
-nnoremap <F9> :setlocal spell!<CR> " toggle spell on or off
+nnoremap <F10> :setlocal spell!<CR> " toggle spell on or off
 nnoremap <F8> :call ToggleSpellLang()<CR> " toggle language
 
 nnoremap <silent> _ :exe "resize +1"<CR>
