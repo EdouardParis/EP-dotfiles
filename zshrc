@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/golang"
 export PATH="$PATH:$HOME/golang/bin"
 # export DOCKER_HOST=tcp://localhost:4243
 
@@ -54,3 +55,9 @@ export PATH="$PATH:$HOME/golang/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+PATH="/home/edouard/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/edouard/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/edouard/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/edouard/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/edouard/perl5"; export PERL_MM_OPT;

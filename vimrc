@@ -11,6 +11,7 @@ set autoread
 set incsearch
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 set expandtab
 set autoindent
 set smartindent
@@ -83,7 +84,7 @@ function! ToggleBackgroundColor()
 endfunction
 nnoremap <F6> :call ToggleBackgroundColor()<CR> " toggle background
 
-colorscheme solarized 
+colorscheme solarized
 let g:mustache_abbreviations = 1
 
 set regexpengine=1
@@ -132,6 +133,9 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"
+" set up autocomplete
+let g:neocomplete#enable_at_startup = 1
 
 let mapleader = '²'
 filetype plugin indent on     " required!
