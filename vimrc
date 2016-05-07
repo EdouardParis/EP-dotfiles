@@ -25,7 +25,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 filetype plugin indent on
 
-set t_Co=16
+set t_Co=256
 " colorecting colorscheme
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
@@ -73,19 +73,9 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
-set background=dark " dark | light "
-
-function! ToggleBackgroundColor()
-  " toggle between en and fr
-  if &background =~# 'dark'
-    :set background=light
-  else
-    :set background=dark
-  endif
-endfunction
-nnoremap <F6> :call ToggleBackgroundColor()<CR> " toggle background
-
-colorscheme solarized
+let g:rehash256 = 1
+set background=dark
+colorscheme molokai
 let g:mustache_abbreviations = 1
 
 set regexpengine=1
