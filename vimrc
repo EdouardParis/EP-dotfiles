@@ -113,6 +113,9 @@ let g:used_javascript_libs = 'jquery,underscore,angularjs'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ocaml_checkers = ['merlin']
 
+" jsx in js files
+let g:jsx_ext_required = 0
+
 " vim-latex default target format
 let g:Tex_DefaultTargetFormat = 'pdf'
 " plaintex to latex
@@ -146,6 +149,9 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 " merlin for ocaml set up
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+" ocaml indent
+set rtp^="/home/edouard/.opam/system/share/ocp-indent/vim"
 
 filetype plugin indent on     " required!
 syntax on
