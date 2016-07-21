@@ -31,6 +31,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'mxw/vim-jsx'
 
+" stylesheet
+Plugin 'groenewege/vim-less'
+
 Plugin 'mileszs/ack.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fatih/vim-go'
