@@ -110,7 +110,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "proprietary attribute \"ion-", "<ion-", "<ng-", "</ng-", "</ion-", "<bbird-", "</bbird-", "trimming empty <i>"]
 let g:used_javascript_libs = 'jquery,underscore,angularjs'
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ocaml_checkers = ['merlin']
 
 " jsx in js files
