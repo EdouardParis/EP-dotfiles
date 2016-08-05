@@ -2,7 +2,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "let Vundle manage Vundle
 "required!
-
+Plugin 'wikitopian/hardmode' " time to suffer
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-haml'
@@ -33,6 +33,9 @@ Plugin 'mxw/vim-jsx'
 
 " stylesheet
 Plugin 'groenewege/vim-less'
+
+" solidity
+Plugin 'tomlion/vim-solidity'
 
 Plugin 'mileszs/ack.vim'
 Plugin 'Raimondi/delimitMate'

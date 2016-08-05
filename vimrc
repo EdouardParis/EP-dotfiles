@@ -1,4 +1,4 @@
-set number
+set relativenumber
 set history=1000
 set ruler
 set showmatch
@@ -13,6 +13,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set splitright        " vertical window should be split to right
+set splitbelow        " Horizontal window should be split to bottom
 set autoindent
 set smartindent
 set smarttab
@@ -152,6 +154,10 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ocaml indent
 set rtp^="/home/edouard/.opam/system/share/ocp-indent/vim"
+
+" Enable Hardmode by default
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 filetype plugin indent on     " required!
 syntax on
