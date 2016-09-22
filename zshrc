@@ -27,6 +27,7 @@ export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/golang"
 export PATH="$PATH:$HOME/golang/bin"
+export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 # export DOCKER_HOST=tcp://localhost:4243
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
