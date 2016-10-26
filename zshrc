@@ -29,6 +29,8 @@ export GOPATH="$HOME/golang"
 export PATH="$PATH:$HOME/golang/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 # export DOCKER_HOST=tcp://localhost:4243
+# PostgreSQL
+export PGHOST=localhost
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
