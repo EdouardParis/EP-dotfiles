@@ -43,13 +43,3 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='mvim'
 fi
-
-
-PATH="/home/edouard/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/edouard/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/edouard/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/edouard/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/edouard/perl5"; export PERL_MM_OPT;
-
-# OPAM configuration
-. /home/edouard/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
