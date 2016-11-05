@@ -1,6 +1,3 @@
-[user]
-	name = EdouardParis
-	email = mail@edouard.paris
 [push]
 	default = simple
 [pull]

@@ -32,6 +32,9 @@ export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 # PostgreSQL
 export PGHOST=localhost
 
+# OPAM configuration
+ . /home/edouard/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # You may need to manually set your language environment
