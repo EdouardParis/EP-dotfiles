@@ -46,3 +46,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='mvim'
 fi
+
+# command line fuzzy finder https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
