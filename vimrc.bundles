@@ -17,6 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " utils
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
