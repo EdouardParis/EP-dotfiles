@@ -3,6 +3,7 @@ set history=1000
 set ruler
 set showmatch
 set mouse=a
+set cursorline
 set tw:1337
 set si
 set hls is
@@ -65,7 +66,6 @@ nnoremap <C-l> <C-w>l
 
 " Left insert mode
 inoremap jj <ESC>
-
 filetype off          " required!
 
 " for plugins
@@ -82,6 +82,13 @@ let g:airline_powerline_fonts = 1
 let g:rehash256 = 1
 set background=dark
 colorscheme molokai
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
 let g:mustache_abbreviations = 1
 
 set regexpengine=1
@@ -158,10 +165,6 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ocaml indent
 set rtp^="/home/edouard/.opam/system/share/ocp-indent/vim"
-
-" Enable Hardmode by default
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 filetype plugin indent on     " required!
 syntax on

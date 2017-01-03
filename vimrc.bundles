@@ -2,11 +2,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "let Vundle manage Vundle
 "required!
-Plugin 'wikitopian/hardmode' " time to suffer
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
 Plugin 'xenoterracide/html.vim'
 Plugin 'scrooloose/syntastic'
 
@@ -14,6 +12,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'reedes/vim-colors-pencil'
+
+"Markdown and text utilities
+Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'reedes/vim-pencil'
 
 " utils
 Plugin 'junegunn/fzf'
@@ -22,7 +26,6 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'rodjek/vim-puppet'
