@@ -83,6 +83,7 @@ let g:rehash256 = 1
 set background=dark
 colorscheme molokai
 
+let g:pencil#wrapModeDefault = 'soft'  
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
