@@ -13,12 +13,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 0
+hide_edge_borders vertical
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -146,14 +147,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:Source Sans Pro-10 10
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2
               background #000000
               statusline #839496
               focused_workspace #fdf6e3 #6c71c4 #fdf6e3
-              active_workspace #fdf6e3 #6c71c4 #fdf6e3
+              active_workspace #fdf6e3 #6c71c4 #000000
               inactive_workspace #002b36 #586e75 #002b36
               urgent_workspace #d33682 #d33682 #fdf6e3
           }
 }
+
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpaper/* 
