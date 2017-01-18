@@ -31,7 +31,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 80 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -151,13 +151,13 @@ bar {
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2
-              background #000000
-              statusline #839496
-              focused_workspace #fdf6e3 #6c71c4 #fdf6e3
+              background #14161F
+              statusline #00FFFF
+              focused_workspace #00FFFF #00FFFF #14161F
               active_workspace #fdf6e3 #6c71c4 #000000
-              inactive_workspace #002b36 #586e75 #002b36
+              inactive_workspace #14161F #14161F #00FFFF
               urgent_workspace #d33682 #d33682 #fdf6e3
           }
 }
 
-exec --no-startup-id feh --randomize --bg-fill ~/.wallpaper/* 
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/* 
