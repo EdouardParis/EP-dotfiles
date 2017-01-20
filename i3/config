@@ -174,5 +174,6 @@ bar {
           }
 }
 
-exec --no-startup-id feh --randomize --bg-ficonfigll ~/.wallpapers/* 
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/* 
 exec --no-startup-id nm-applet
+exec --no-startup-id compton --config ~/.i3/compton.conf -CGb 
