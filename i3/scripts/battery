@@ -22,6 +22,7 @@ my $percent;
 my $ac_adapt;
 my $full_text;
 my $short_text;
+my $color = "#00FF00";
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 
 # read the first line of the "acpi" command output
@@ -39,7 +40,24 @@ $percent = $2;
 $full_text = "$percent%";
 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+  if ($percent < 30) {
+		$color = "#FF0000";
+	  $full_text .= ' ';
+	} elsif ($percent < 55) {
+		$color = "#FFAE00";
+	  $full_text .= ' ';
+	} elsif ($percent < 80) {
+		$color = "#FFF600";
+	  $full_text .= ' ';
+	} elsif ($percent < 95) {
+		$color = "#A8FF00";
+	  $full_text .= ' ';
+	}
+
+	if ($percent < 5) {
+		exit(33);
+	}
+
 } elsif ($status eq 'Charging') {
 	$full_text .= ' ';
 } elsif ($status eq 'Unknown') {
@@ -67,23 +85,7 @@ if ($acpi =~ /(\d\d:\d\d):/) {
 # print text
 print "$full_text\n";
 print "$short_text\n";
+print "$color\n";
 
-# consider color and urgent flag only on discharge
-if ($status eq 'Discharging') {
-
-	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
-
-	if ($percent < 5) {
-		exit(33);
-	}
-}
 
 exit(0);
