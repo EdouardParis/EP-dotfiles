@@ -32,7 +32,8 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 90 
+bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 90 -terminal gnome-terminal
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
