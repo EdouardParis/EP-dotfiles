@@ -103,14 +103,16 @@ set $ws2 "2. "
 set $ws3 "3. "
 set $ws4 "4. "
 set $ws5 "5. "
-set $ws6 "6. "
-set $ws7 "7. "
-set $ws8 "8. "
-set $ws9 "9. "
+set $ws6 "6. "
+set $ws7 "7. "
+set $ws8 "8. "
+set $ws9 "9. "
 
 for_window [class="Google-chrome"] move container to workspace $ws2
-for_window [class="Slack"] move container to workspace $ws7
-for_window [instance="cmus"] move container to workspace $ws8
+for_window [class="Slack"] move container to workspace $ws6
+for_window [title="cmus v2.7.1"] move container to workspace $ws7
+for_window [title="paris2013@tom: ~"] move container to workspace $ws8
+for_window [title="mutt"] move container to workspace $ws9
 
 # switch to workspace
 bindsym $mod+ampersand workspace $ws1
