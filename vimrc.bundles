@@ -19,19 +19,6 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'reedes/vim-pencil'
 
-" utils
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'rodjek/vim-puppet'
-Plugin 'vim-scripts/tComment'
-Plugin 'mustache/vim-mustache-handlebars'
-
 " javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -50,6 +37,22 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'beyondwords/vim-twig'
 Plugin 'vim-latex/vim-latex'
 Plugin 'rust-lang/rust.vim'
+
+" utils
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'vim-scripts/tComment'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'SirVer/ultisnips'
+
+
 
 call vundle#end()
 

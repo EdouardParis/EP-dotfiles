@@ -23,7 +23,13 @@ set nobackup
 set nowritebackup
 set noswapfile
 set nocompatible      " We're running Vim, not Vi!
-filetype on           " Enable filetype detection
+
+" for plugins
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
+filetype off " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 filetype plugin indent on
@@ -68,16 +74,10 @@ nnoremap <C-l> <C-w>l
 inoremap jj <ESC>
 filetype off          " required!
 
-" for plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
 "vim ailine config"
-let g:airline_powerline_fonts = 1
-
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline_theme='murmur'
 
 let g:rehash256 = 1
 set background=dark
@@ -145,6 +145,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 "
 " set up autocomplete
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 
 " set up command go
@@ -161,12 +162,14 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+" set up fzf
+" access fzf file list faster
+nnoremap à :FZF<CR>
+
 " merlin for ocaml set up
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ocaml indent
 set rtp^="/home/edouard/.opam/system/share/ocp-indent/vim"
-
-filetype plugin indent on     " required!
 syntax on

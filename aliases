@@ -4,7 +4,6 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Unix
 alias tlf="tail -f"
 alias mkdir='mkdir -p'
-alias iie='ssh paris2013@perso.iiens.net'
 alias ...='../..'
 alias l='ls'
 alias ll='ls -al'
