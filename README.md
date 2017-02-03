@@ -5,6 +5,9 @@
 * zsh
 * Oh-my-zsh
 
+### Fonts
+* Powerline fonts
+
 ### Editor and screen
 * vim
 * tmux
@@ -17,3 +20,7 @@
 * sysstat
 * acpi
 * feh
+
+### utils
+* ag the silversearcher
+* fzf 
