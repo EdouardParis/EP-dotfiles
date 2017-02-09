@@ -185,7 +185,7 @@ bar {
         output eDP1
         position top
         separator_symbol "|"
-        font pango:Source Sans Pro-20 20
+        font pango:Source Sans Pro-20, FontAwesome 20
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2
@@ -202,7 +202,7 @@ bar {
         output DP1
         position top
         separator_symbol "|"
-        font pango:Source Sans Pro-12 12
+        font pango:Source Sans Pro-12, FontAwesome 12
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2

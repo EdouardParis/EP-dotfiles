@@ -41,6 +41,7 @@ autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd Filetype markdown setlocal spell textwidth=72
 autocmd Filetype text setlocal spell textwidth=72
+autocmd BufRead,BufNewFile *.tex setlocal spell textwidth=72
 
 let mapleader = '²'
 " spell checking
