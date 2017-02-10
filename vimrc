@@ -163,6 +163,10 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+" use goimports
+let g:go_fmt_command = "goimports"
+
+
 " set up fzf
 " access fzf file list faster
 nnoremap à :FZF<CR>
