@@ -146,9 +146,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # binding for sound control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer set Master 0 toggle
 
 # binding for i3lock
 bindsym $mod+Control+l exec i3lock -c 14161F
