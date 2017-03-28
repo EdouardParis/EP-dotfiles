@@ -18,6 +18,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'reedes/vim-pencil'
+Plugin 'Rykka/riv.vim'
 
 " javascript
 Plugin 'pangloss/vim-javascript'

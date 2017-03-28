@@ -34,7 +34,6 @@ bindsym $mod+Shift+a kill
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 90 -terminal gnome-terminal
 
-
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -185,7 +184,7 @@ bar {
         output eDP1
         position top
         separator_symbol "|"
-        font pango:Source Sans Pro-20, FontAwesome 20
+        font pango:Inconsolata for Powerline, FontAwesome 20
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2
@@ -202,7 +201,7 @@ bar {
         output DP1
         position top
         separator_symbol "|"
-        font pango:Source Sans Pro-12, FontAwesome 12
+        font pango:Inconsolata for Powerline, FontAwesome 12
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2

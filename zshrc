@@ -14,7 +14,7 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
    
-plugins=(git)
+plugins=(git last-working-dir)
 
 # User configuration
 
@@ -45,3 +45,8 @@ export PGHOST=localhost
 
 # gopass completion
 source <(gopass completion zsh)
+
+# load source for local architecture.
+if [ -e "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi
