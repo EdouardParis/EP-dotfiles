@@ -166,7 +166,9 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 au Filetype go nnoremap t :GoTestFunc<CR>
 " use goimports
 let g:go_fmt_command = "goimports"
-
+" use gometalinter on save
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 
 " set up fzf
 " access fzf file list faster
