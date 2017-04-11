@@ -168,7 +168,7 @@ au Filetype go nnoremap t :GoTestFunc<CR>
 let g:go_fmt_command = "goimports"
 " use gometalinter on save
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 
 " set up fzf
 " access fzf file list faster
