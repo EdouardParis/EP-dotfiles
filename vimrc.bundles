@@ -6,7 +6,7 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-haml'
 Plugin 'xenoterracide/html.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 "themes
 Plugin 'tomasr/molokai'

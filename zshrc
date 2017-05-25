@@ -28,6 +28,9 @@ export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/golang"
 export PATH="$PATH:$HOME/golang/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 # export DOCKER_HOST=tcp://localhost:4243
 # PostgreSQL
 export PGHOST=localhost

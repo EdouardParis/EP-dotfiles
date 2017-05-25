@@ -75,7 +75,7 @@ nnoremap <C-l> <C-w>l
 inoremap jj <ESC>
 filetype off          " required!
 
-"vim ailine config"
+"vim airline config"
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='murmur'
@@ -137,6 +137,19 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 " plaintex to latex
 let g:tex_flavor='latex'
 
+" fugitive config
+set diffopt+=vertical
+
+" syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " go syntax-highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -166,13 +179,12 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 au Filetype go nnoremap t :GoTestFunc<CR>
 " use goimports
 let g:go_fmt_command = "goimports"
-" use gometalinter on save
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+" use syntastic
+let g:syntastic_go_checkers = ['golint', 'govet', 'varcheck']
 
 " set up fzf
 " access fzf file list faster
-nnoremap à :FZF<CR>
+nnoremap 0 :FZF<CR>
 
 " merlin for ocaml set up
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
