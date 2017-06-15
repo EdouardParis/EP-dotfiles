@@ -71,6 +71,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" jump line end 
+nnoremap ; $
+
 " Left insert mode
 inoremap jj <ESC>
 filetype off          " required!
