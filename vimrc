@@ -78,6 +78,12 @@ nnoremap ; $
 inoremap jj <ESC>
 filetype off          " required!
 
+" search using ag
+nnoremap gs *:Ag<CR> 
+
+" copy in visual mode
+vnoremap <C-c> "+y
+
 "vim airline config"
 set laststatus=2
 let g:airline_powerline_fonts = 1
