@@ -191,6 +191,9 @@ let g:go_fmt_command = "goimports"
 " use syntastic
 let g:syntastic_go_checkers = ['golint', 'govet', 'varcheck']
 
+" rustfmt
+let g:rustfmt_autosave = 1
+
 " set up fzf
 " access fzf file list faster
 nnoremap 0 :FZF<CR>

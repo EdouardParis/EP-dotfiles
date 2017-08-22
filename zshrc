@@ -27,6 +27,7 @@ export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/golang"
 export PATH="$PATH:$HOME/golang/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
