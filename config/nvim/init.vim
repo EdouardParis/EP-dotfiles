@@ -25,14 +25,12 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'          " CtrlP is installed to support tag finding in vim-go
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/calendar.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vader.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-Plug 'neomake/neomake'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -48,8 +46,6 @@ Plug 'cespare/vim-toml'
 Plug 'dag/vim-fish'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
-Plug 'fishbullet/deoplete-ruby'
-Plug 'kchmck/vim-coffee-script'
 Plug 'kylef/apiblueprint.vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
@@ -57,6 +53,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'tclh123/vim-thrift'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
+
+" lint
+Plug 'w0rp/ale'
 
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
@@ -100,8 +99,8 @@ if has('nvim')
     " install the neovim package for these binaries separately like this for
     " example:
     " pip3.6 install -U neovim
-    let g:python_host_prog = '/usr/local/bin/python2.7'
-    let g:python3_host_prog = '/usr/local/bin/python3.6'
+    let g:python_host_prog = '/usr/bin/python'
+    let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 " Enable mouse if possible
@@ -123,6 +122,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Center the screen quickly
 nnoremap <space> zz
+
+" Left insert mode
+inoremap jj <ESC>
 
 "----------------------------------------------
 " Colors
@@ -161,12 +163,7 @@ nnoremap N Nzzzv
 "----------------------------------------------
 " Navigation
 "----------------------------------------------
-" Disable arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
+"
 " Move between buffers with Shift + arrow key...
 nnoremap <S-Left> :bprevious<cr>
 nnoremap <S-Right> :bnext<cr>
@@ -385,13 +382,14 @@ nnoremap <leader>w :Bclose<cr>
 nnoremap <leader>a :Ack!<space>
 
 "----------------------------------------------
-" Plugin: neomake/neomake
+" Plugin: ale/ale
 "----------------------------------------------
 " Configure signs.
-let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
-let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '∆'
+
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 
 "----------------------------------------------
 " Plugin: scrooloose/nerdtree
@@ -540,31 +538,6 @@ let g:go_metalinter_enabled = [
 " Set whether the JSON tags should be snakecase or camelcase.
 let g:go_addtags_transform = "snakecase"
 
-" neomake configuration for Go.
-let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
-let g:neomake_go_gometalinter_maker = {
-  \ 'args': [
-  \   '--tests',
-  \   '--enable-gc',
-  \   '--concurrency=3',
-  \   '--fast',
-  \   '-D', 'aligncheck',
-  \   '-D', 'dupl',
-  \   '-D', 'gocyclo',
-  \   '-D', 'gotype',
-  \   '-E', 'errcheck',
-  \   '-E', 'misspell',
-  \   '-E', 'unused',
-  \   '%:p:h',
-  \ ],
-  \ 'append_file': 0,
-  \ 'errorformat':
-  \   '%E%f:%l:%c:%trror: %m,' .
-  \   '%W%f:%l:%c:%tarning: %m,' .
-  \   '%E%f:%l::%trror: %m,' .
-  \   '%W%f:%l::%tarning: %m'
-  \ }
-
 "----------------------------------------------
 " Language: apiblueprint
 "----------------------------------------------
@@ -684,9 +657,6 @@ au FileType ruby set expandtab
 au FileType ruby set shiftwidth=2
 au FileType ruby set softtabstop=2
 au FileType ruby set tabstop=2
-
-" Enable neomake for linting.
-au FileType ruby autocmd BufWritePost * Neomake
 
 "----------------------------------------------
 " Language: SQL
