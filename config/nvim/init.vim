@@ -59,6 +59,7 @@ Plug 'w0rp/ale'
 
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -71,7 +72,6 @@ set autoread                      " reload file if the file changes on the disk
 set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
 set clipboard=unnamedplus
-set colorcolumn=81                " highlight the 80th column as an indicator
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
 set encoding=utf-8
@@ -130,7 +130,7 @@ inoremap jj <ESC>
 " Colors
 "----------------------------------------------
 set background=dark
-colorscheme PaperColor
+colorscheme codedark
 
 " Override the search highlight color with a combination that is easier to
 " read. The default PaperColor is dark green backgroun with black foreground.
@@ -270,7 +270,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 0
 
 " Enable powerline fonts.
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 "----------------------------------------------
 " Plugin: christoomey/vim-tmux-navigator
