@@ -267,7 +267,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Disable showing tabs in the tabline. This will ensure that the buffers are
 " what is shown in the tabline at all times.
-let g:airline#extensions#tabline#show_tabs = 0
+" let g:airline#extensions#tabline#show_tabs = 0
 
 " Enable powerline fonts.
 let g:airline_powerline_fonts = 1
@@ -467,6 +467,22 @@ let g:multi_cursor_skip_key='<C-b>'
 "----------------------------------------------
 " Enable completing of go pointers
 let g:deoplete#sources#go#pointer = 1
+
+"----------------------------------------------
+" Plugin: tpope/fugitive
+"----------------------------------------------
+
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gr :Gremove<CR>
+nnoremap <silent> <leader>gp :Gpush<cr>
+nnoremap <silent> <leader>ga :Gadd<cr>
+nnoremap <silent> <leader>gco :Gcheckout<cr>
 
 "----------------------------------------------
 " Language: Golang
