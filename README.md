@@ -23,4 +23,10 @@
 
 ### utils
 * ag the silversearcher
-* fzf 
+* fzf
+
+### bugs
+nautilus and i3:
+```
+gsettings set org.gnome.desktop.background show-desktop-icons false
+```
