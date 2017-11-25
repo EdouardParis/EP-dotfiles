@@ -30,3 +30,12 @@ nautilus and i3:
 ```
 gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
+
+if i3bar does not show up:
+check screen with:
+```
+xrandr --current
+```
+and change in i3/config bar output.
+
+
