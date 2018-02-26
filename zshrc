@@ -13,7 +13,7 @@ export EDITOR=$VISUAL
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
-   
+
 plugins=(git last-working-dir)
 
 # User configuration
@@ -26,6 +26,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/golang"
+export GOROOT="/usr/local/go"
 export PATH="$PATH:$HOME/golang/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
