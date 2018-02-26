@@ -401,7 +401,10 @@ let g:ale_sign_warning = '∆'
 
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
-
+let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor --vendored-linters '
+let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_set_highlights = 0
+"
 "----------------------------------------------
 " Plugin: scrooloose/nerdtree
 "----------------------------------------------
