@@ -23,32 +23,26 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'          " CtrlP is installed to support tag finding in vim-go
-Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vader.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'sebdah/vim-delve'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 
 " Language support
-Plug 'aklt/plantuml-syntax'
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'cespare/vim-toml'
-Plug 'dag/vim-fish'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
-Plug 'kylef/apiblueprint.vim'
 Plug 'lifepillar/pgsql.vim'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'plasticboy/vim-markdown'
 Plug 'tclh123/vim-thrift'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -86,7 +80,6 @@ set nowrap
 set noerrorbells                  " No bells!
 set novisualbell                  " I said, no bells!
 set number                        " show number ruler
-set relativenumber                " show relative numbers in the ruler
 set ruler
 set formatoptions=tcqron          " set vims text formatting options
 set softtabstop=2
@@ -94,6 +87,9 @@ set tabstop=2
 set textwidth=80
 set title                         " let vim set the terminal title
 set updatetime=100                " redraw the status bar often
+set nocursorcolumn
+syntax sync minlines=256
+set re=1
 
 " neovim specific settings
 if has('nvim')
@@ -399,10 +395,13 @@ nnoremap <leader>a :Ack!<space>
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '∆'
 
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
-let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor --vendored-linters '
-let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor'
+let g:ale_python_flake8_args="--ignore=E501"
+let g:ale_linters = {'python':['flake8'], 'go': ['gometalinter']}
 let g:ale_set_highlights = 0
 "
 "----------------------------------------------
@@ -461,7 +460,7 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 "----------------------------------------------
 " Path to wiki
 let g:vimwiki_list = [{
-        \ 'path': '~/Dropbox/vimwiki',
+        \ 'path': '~/Documents/vimwiki',
         \ 'syntax': 'markdown',
         \ 'ext': '.vimwiki.markdown'}]
 
@@ -563,7 +562,7 @@ let g:go_highlight_extra_types = 1
 let g:go_echo_command_info = 1
 
 " Show type information
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 
 " Highlight variable uses
 let g:go_auto_sameids = 1
@@ -573,15 +572,10 @@ let g:go_list_type = "quickfix"
 
 " gometalinter configuration
 let g:go_metalinter_command = ""
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_deadline = "3s"
 let g:go_metalinter_enabled = [
     \ 'deadcode',
-    \ 'errcheck',
-    \ 'gas',
-    \ 'goconst',
-    \ 'gocyclo',
     \ 'golint',
-    \ 'gosimple',
     \ 'ineffassign',
     \ 'vet',
     \ 'vetshadow'
