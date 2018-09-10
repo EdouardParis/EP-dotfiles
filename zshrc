@@ -23,11 +23,13 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 
 source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.local/bin"
 export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/golang"
 export GOROOT="/usr/local/go"
-export PATH="$PATH:$HOME/golang/bin"
+export GOBIN="$HOME/golang/bin"
+export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 export PYENV_ROOT="$HOME/.pyenv"
@@ -47,9 +49,6 @@ export PGHOST=localhost
 
 # command line fuzzy finder https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# gopass completion
-source <(gopass completion zsh)
 
 # load source for local architecture.
 if [ -e "$HOME/.zshrc.local" ]; then
