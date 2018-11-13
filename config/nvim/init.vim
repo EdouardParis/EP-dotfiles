@@ -28,7 +28,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vader.vim'
 Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -36,6 +35,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-grepper'
 
 " Language support
 Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
@@ -399,9 +399,12 @@ let g:ale_sign_warning = '∆'
 let g:ale_lint_on_text_changed = 'never'
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
-let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor'
+" let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor'
 let g:ale_python_flake8_args="--ignore=E501"
-let g:ale_linters = {'python':['flake8'], 'go': ['gometalinter']}
+" let g:ale_linters = {'python':['flake8'], 'go': ['gometalinter']}
+let g:ale_linters = {'python':['flake8'], 'go': ['golangci-lint']}
+let g:ale_go_golangci_lint_package = 1
+let g:ale_go_golangci_lint_options ="--no-config"
 let g:ale_set_highlights = 0
 "
 "----------------------------------------------

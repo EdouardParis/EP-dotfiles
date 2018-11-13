@@ -50,6 +50,9 @@ export PGHOST=localhost
 # command line fuzzy finder https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND='fd --type d .'
+
 # load source for local architecture.
 if [ -e "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"

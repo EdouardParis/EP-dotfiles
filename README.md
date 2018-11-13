@@ -10,6 +10,7 @@
 
 ### Editor and screen
 * vim
+* nvim
 * tmux
 
 ### I3 and Co
@@ -24,6 +25,8 @@
 ### utils
 * ag the silversearcher
 * fzf
+* ripgrep `cargo install ripgrep`
+* fd `cargo install fd-find`
 
 ### bugs
 nautilus and i3:
