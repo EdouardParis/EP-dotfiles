@@ -401,6 +401,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_go_gometalinter_options = ' --aggregate --fast --sort=line --vendor'
 let g:ale_python_flake8_args="--ignore=E501"
+let g:ale_python_flake8_options="--ignore=E501"
 " let g:ale_linters = {'python':['flake8'], 'go': ['gometalinter']}
 let g:ale_linters = {'python':['flake8'], 'go': ['golangci-lint']}
 let g:ale_go_golangci_lint_package = 1
