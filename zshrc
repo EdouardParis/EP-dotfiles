@@ -14,6 +14,9 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
+# apparish
+source "$HOME/.bourne-apparish"
+
 plugins=(git last-working-dir)
 
 # User configuration
@@ -35,6 +38,7 @@ export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 # export DOCKER_HOST=tcp://localhost:4243
 # PostgreSQL
 export PGHOST=localhost

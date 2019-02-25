@@ -38,7 +38,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'mhinz/vim-grepper'
 
 " Language support
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'cespare/vim-toml'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
@@ -49,6 +48,8 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'ambv/black'
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " lint
 Plug 'w0rp/ale'
@@ -90,6 +91,7 @@ set updatetime=100                " redraw the status bar often
 set nocursorcolumn
 syntax sync minlines=256
 set re=1
+set completeopt+=noselect
 
 " neovim specific settings
 if has('nvim')
@@ -97,8 +99,8 @@ if has('nvim')
     " install the neovim package for these binaries separately like this for
     " example:
     " pip3.6 install -U neovim
-    let g:python_host_prog = '/usr/bin/python'
-    let g:python3_host_prog = '/usr/bin/python3'
+    let g:python_host_prog = '/home/edouard/.pyenv/versions/neovim2/bin/python'
+    let g:python3_host_prog = '/home/edouard/.pyenv/versions/neovim3/bin/python'
 endif
 
 " Enable mouse if possible
@@ -240,10 +242,12 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 "----------------------------------------------
 " Plugin: Shougo/deoplete.nvim
 "----------------------------------------------
-if has('nvim')
-    " Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
-endif
+" Enable deoplete on startup
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#source_importer = 1
+let g:deoplete#sources#go#package_dot = 1
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " Disable deoplete when in multi cursor mode
 function! Multiple_cursors_before()
@@ -651,14 +655,6 @@ au FileType json set softtabstop=2
 au FileType json set tabstop=2
 
 "----------------------------------------------
-" Language: LESS
-"----------------------------------------------
-au FileType less set expandtab
-au FileType less set shiftwidth=2
-au FileType less set softtabstop=2
-au FileType less set tabstop=2
-
-"----------------------------------------------
 " Language: Make
 "----------------------------------------------
 au FileType make set noexpandtab
@@ -678,14 +674,6 @@ au FileType markdown set syntax=markdown
 au FileType markdown setlocal spell textwidth=72
 
 "----------------------------------------------
-" Language: PlantUML
-"----------------------------------------------
-au FileType plantuml set expandtab
-au FileType plantuml set shiftwidth=4
-au FileType plantuml set softtabstop=4
-au FileType plantuml set tabstop=4
-
-"----------------------------------------------
 " Language: Protobuf
 "----------------------------------------------
 au FileType proto set expandtab
@@ -696,18 +684,13 @@ au FileType proto set tabstop=2
 "----------------------------------------------
 " Language: Python
 "----------------------------------------------
+
+"autocmd BufWritePre *.py execute ':Black'
+
 au FileType python set expandtab
 au FileType python set shiftwidth=4
 au FileType python set softtabstop=4
 au FileType python set tabstop=4
-
-"----------------------------------------------
-" Language: Ruby
-"----------------------------------------------
-au FileType ruby set expandtab
-au FileType ruby set shiftwidth=2
-au FileType ruby set softtabstop=2
-au FileType ruby set tabstop=2
 
 "----------------------------------------------
 " Language: SQL
@@ -732,14 +715,6 @@ au FileType toml set expandtab
 au FileType toml set shiftwidth=2
 au FileType toml set softtabstop=2
 au FileType toml set tabstop=2
-
-"----------------------------------------------
-" Language: Vader
-"----------------------------------------------
-au FileType vader set expandtab
-au FileType vader set shiftwidth=2
-au FileType vader set softtabstop=2
-au FileType vader set tabstop=2
 
 "----------------------------------------------
 " Language: vimscript
