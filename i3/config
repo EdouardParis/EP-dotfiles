@@ -185,8 +185,7 @@ bindsym $mod+r mode "resize"
 bar {
         output eDP-1
         position top
-        separator_symbol "|"
-        font pango:Inconsolata for Powerline, FontAwesome 20
+        font pango:Inconsolata for Powerline, FontAwesome 10
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2
@@ -202,8 +201,7 @@ bar {
 bar {
         output DP-1
         position top
-        separator_symbol "|"
-        font pango:Inconsolata for Powerline, FontAwesome 12
+        font pango:Inconsolata for Powerline, FontAwesome 6
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors {
               separator #268bd2

@@ -510,6 +510,7 @@ nnoremap <silent> <leader>gco :Gcheckout<cr>
 "----------------------------------------------
 
 let g:rustfmt_autosave = 1
+let g:racer_cmd = "/home/edouard/.cargo/bin/racer"
 
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
