@@ -34,6 +34,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'vimwiki/vimwiki'
 Plug 'mhinz/vim-grepper'
 
@@ -48,7 +49,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
-Plug 'ambv/black'
+Plug 'python/black'
 Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " lint
@@ -624,14 +625,6 @@ au FileType gitcommit setlocal spell
 au FileType gitcommit setlocal textwidth=80
 
 "----------------------------------------------
-" Language: fish
-"----------------------------------------------
-au FileType fish set expandtab
-au FileType fish set shiftwidth=2
-au FileType fish set softtabstop=2
-au FileType fish set tabstop=2
-
-"----------------------------------------------
 " Language: HTML
 "----------------------------------------------
 au FileType html set expandtab
@@ -686,7 +679,7 @@ au FileType proto set tabstop=2
 " Language: Python
 "----------------------------------------------
 
-"autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
 
 au FileType python set expandtab
 au FileType python set shiftwidth=4
@@ -732,3 +725,5 @@ au FileType yaml set expandtab
 au FileType yaml set shiftwidth=2
 au FileType yaml set softtabstop=2
 au FileType yaml set tabstop=2
+
+
