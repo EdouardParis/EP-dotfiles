@@ -1,11 +1,6 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/edouard/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+autoload -Uz promptinit
+promptinit
+prompt suse
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -14,31 +9,22 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# apparish
-source "$HOME/.bourne-apparish"
-
-plugins=(git last-working-dir)
-
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/edouard/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
 export NODE_PATH="$PATH:/usr/lib/node_modules" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="$HOME/golang"
+export GOPATH="$HOME/go"
 export GOROOT="/usr/local/go"
-export GOBIN="$HOME/golang/bin"
+export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/exercismio/bin" # Add path to exercism.io binary
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 # export DOCKER_HOST=tcp://localhost:4243
 # PostgreSQL
 export PGHOST=localhost
@@ -65,3 +51,10 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/edouard/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+plugins=(git)
+
+ZSH_THEME="lambda" 
