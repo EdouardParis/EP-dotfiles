@@ -111,8 +111,14 @@ tabspaces: 8
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
-  #normal:
-    # Font family
+  # size: 10.0
+  # normal:
+  #   family: Fira Mono
+  #   style: Medium
+  # bold:
+  #   family: Fira Mono
+  # italic:
+  #   family: Fira Mono
     #
     # Default:
     #   - (macOS) Menlo
