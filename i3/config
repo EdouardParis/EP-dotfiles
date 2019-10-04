@@ -218,3 +218,4 @@ exec --no-startup-id feh --randomize --bg-fill ~/Images/wallpapers/*
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.i3/compton.conf -CGb
 exec --no-startup-id pulseaudio --start
+exec --no-startup-id redshift

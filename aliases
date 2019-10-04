@@ -1,6 +1,7 @@
 alias vim="nvim"
 alias oldvim="vim"
 alias k="clear"
+alias preview='fzf --preview "bat --color "always" {}"'
 # set tmux alias for solarized theme
 alias tmux="TERM=screen-256color-bce tmux"
 # Unix

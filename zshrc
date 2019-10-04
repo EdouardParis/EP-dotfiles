@@ -1,11 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/edouard/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+eval "$(starship init zsh)"
+
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -39,6 +36,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 # export DOCKER_HOST=tcp://localhost:4243
 # PostgreSQL
 export PGHOST=localhost
@@ -56,6 +55,7 @@ export PGHOST=localhost
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_ALT_C_COMMAND='fd --type d .'
+export FZF_DEFAULT_OPTS='--preview "bat --color "always" {}"'
 
 # load source for local architecture.
 if [ -e "$HOME/.zshrc.local" ]; then
