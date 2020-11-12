@@ -46,6 +46,8 @@ setopt share_history          # share command history data
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
+export EDITOR='nvim'
+
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH=$PATH:/usr/local/go/bin
 
@@ -91,3 +93,8 @@ alias gr='git remote'
 alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
+
+# load source for local architecture.
+if [ -e "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi
