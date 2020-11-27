@@ -22,7 +22,7 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 0
 hide_edge_borders vertical
 for_window [class="^.*"] border pixel 1
-new_window 1pixel
+default_border pixel 1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -33,7 +33,10 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 90 -terminal gnome-terminal
+# bindsym $mod+d exec --no-startup-id rofi -show run -fg "#FFFFFF" -bg "#14161F" -hlfg "#14161F" -hlbg "#00FFFF" -bc "#14161F" -opacity 90 -terminal gnome-terminal
+#
+# start wofi https://hg.sr.ht/~scoopta/wofi
+bindsym $mod+d exec --no-startup-id wofi --show drun --allow-images
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -175,23 +178,27 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# list outputs with swaymsg -t get_outputs
+output eDP-1 pos 0 0
+output DP-4 pos 1920 0
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	mode hide
-	workspace_buttons yes
-    	hidden_state hide	
+        mode dock
+        hidden_state show
+        workspace_buttons yes
         position bottom
-	tray_output primary
-	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 10
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        tray_output primary
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:DejaVu Sans Mono 8 
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
         colors {
-              background #14161F
-              statusline #00FFFF
-              focused_workspace #00FFFF #00FFFF #14161F
-              active_workspace #fdf6e3 #6c71c4 #000000
-              inactive_workspace #14161F #14161F #00FFFF
-              urgent_workspace #d33682 #d33682 #fdf6e3
-          }
+                background #14161F
+                statusline #00FFFF
+                focused_workspace #00FFFF #00FFFF #14161F
+                active_workspace #fdf6e3 #6c71c4 #000000
+                inactive_workspace #14161F #14161F #00FFFF
+                urgent_workspace #d33682 #d33682 #fdf6e3
+        }
 }

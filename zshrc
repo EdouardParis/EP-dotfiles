@@ -49,9 +49,13 @@ zmodload -i zsh/complist
 export EDITOR='nvim'
 
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH=$PATH:/usr/local/go/bin
 
-eval `ssh-agent -s` > /dev/null
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s` > /dev/null
+fi
+
 eval `starship init zsh`
 
 

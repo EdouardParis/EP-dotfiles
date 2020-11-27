@@ -110,7 +110,7 @@ let mapleader = ','
 autocmd BufLeave * silent! :wa
 
 " Remove trailing white spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Center the screen quickly
 nnoremap <space> zz
@@ -399,7 +399,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_python_flake8_args="--ignore=E501"
 let g:ale_python_flake8_options="--ignore=E501"
 " let g:ale_linters = {'python':['flake8'], 'go': ['gometalinter']}
-let g:ale_linters = {'python':['flake8'], 'go': ['golangci-lint']}
+let g:ale_linters = {'python':['flake8'], 'go': ['golangci-lint'], 'rust': ['analyzer']}
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options ="--no-config"
 let g:ale_set_highlights = 0
