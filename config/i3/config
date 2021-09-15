@@ -150,7 +150,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # binding for i3lock
-bindsym $mod+Control+l exec i3lock -c 14161F
+bindsym $mod+Control+l exec swaylock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,6 +177,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+input * {
+        xkb_layout "us"
+        xkb_variant "alt-intl" 
+}
 
 # list outputs with swaymsg -t get_outputs
 output eDP-1 pos 0 0

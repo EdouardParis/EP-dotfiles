@@ -48,15 +48,18 @@ zmodload -i zsh/complist
 
 export EDITOR='nvim'
 
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:/usr/local/go/bin/go"
 export PATH=$PATH:/usr/local/go/bin
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s` > /dev/null
-fi
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye > /dev/null
 
 eval `starship init zsh`
+eval "$(zoxide init zsh)"
 
 
 # command line fuzzy finder https://github.com/junegunn/fzf
@@ -102,3 +105,4 @@ alias glol='git log --graph --oneline --decorate'
 if [ -e "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
+if [ -e /home/edouard/.nix-profile/etc/profile.d/nix.sh ]; then . /home/edouard/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
